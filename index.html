@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" >
+  <head>
+    <title>YSF Angular Playground</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+<body ng-app="MyApp">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="http:\\www.ysfdev.com">YSFDEV</a>
+    </div>
+  </div>
+  </nav>
+  <div class="container-fluid" ng-controller="MyAppController" >
+    <div class="jumbotron text-center">
+      <h1> YSF Angular Playground </h1>
+      <p> This is my Angularjs playground, my space for learning and exploring Angular. </p>
+    </div>
+    <h3> Projects </h3>
+    <ul>
+      <li ng-repeat="project in projectsList">
+        <h5><strong><a href="{{project.link}}"> {{ project.name }} </a></strong></h5>
+        <p> {{ project.description }}  </p>
+      </li>
+    </ul>
+
+  <footer>
+    <nav class="navbar navbar-inverse  navbar-fixed-bottom" role="navigation">
+      <div class="container text-center">
+          <p class="navbar-text col-md-12 col-sm-12 col-xs-12">
+            Checkout my other projects in my <a href="http://github.com/ysfdev">Github</a>
+          </p>
+      </div>
+    </nav>
+  </footer>
+  </div>
+  <script src="js/angular.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
