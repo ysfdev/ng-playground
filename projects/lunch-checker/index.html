@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; color: green}
+      .failure { color : red }
+      .failureBorderColor { border-color : red}
+      .successBorderColor { border-color : green}
+    </style>
+  </head>
+<body ng-app="LunchCheck">
+   <div ng-controller="LunchCheckController" class="container">
+     <h1>Lunch Checker</h1>
+         <div class="form-group ">
+             <input id="lunch-menu" type="text"
+             ng-model="lunchItems"
+             ng-class="{'failureBorderColor' : invalidInput, 'successBorderColor' : enableSuccessBorderColor}"
+             placeholder="list comma separated dishes you usually have for lunch"
+             class="form-control">
+         </div>
+         <div class="form-group">
+             <button ng-click="checkIfTooMuch()" class="btn btn-default">Check If Too Much</button>
+         </div>
+         <div class="form-group message" ng-class="{failure: invalidInput}">
+           {{ message }}
+         </div>
+   </div>
+   <script src="js/angular.min.js"></script>
+   <script src="js/app.js"></script>
+</body>
+</html>
