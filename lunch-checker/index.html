@@ -6,21 +6,13 @@
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <style>
       .message { font-size: 1.3em; font-weight: bold; color: green}
-      .content { margin-top : 55px;}
       .failure { color : red }
       .failureBorderColor { border-color : red}
       .successBorderColor { border-color : green}
     </style>
   </head>
 <body ng-app="LunchCheck">
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="https://ysfdev.github.io/ng-playground">YSF NG-PLAYGROUND</a>
-      </div>
-    </div>
-  </nav>
-   <div ng-controller="LunchCheckController" class="container content">
+   <div ng-controller="LunchCheckController" class="container">
      <h1>Lunch Checker</h1>
          <div class="form-group ">
              <input id="lunch-menu" type="text"

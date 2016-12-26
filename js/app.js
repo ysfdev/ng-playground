@@ -17,7 +17,7 @@
       {
         "name": "Lunch Checker",
         "description" : "A simple lunch Checker",
-        "link" : ""
+        "link" : "projects/lunch-checker/index.html"
       }
     ];
   }
