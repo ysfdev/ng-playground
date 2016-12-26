@@ -28,6 +28,7 @@
              ng-class="{'failureBorderColor' : invalidInput, 'successBorderColor' : enableSuccessBorderColor}"
              placeholder="list comma separated dishes you usually have for lunch"
              class="form-control">
+             <span class="label label-warning">Note: "empty" items are not consider towards total item list count.</span>
          </div>
          <div class="form-group">
              <button ng-click="checkIfTooMuch()" class="btn btn-default">Check If Too Much</button>
