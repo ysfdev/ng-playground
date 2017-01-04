@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" ng-app="ShoppingListCheckOff">
+  <head>
+    <title>Shopping List Check Off</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+      .emptyMessage {
+        font-weight: bold;
+        color: red;
+        font-size: 1.2em;
+      }
+      li {
+        margin-bottom: 7px;
+        font-size: 1.2em;
+      }
+      li > button {
+        margin-left: 6px;
+      }
+      button > span {
+        color: green;
+      }
+      .content {
+        margin-top: 60px;
+      }
+    </style>
+  </head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="https://ysfdev.github.io/ng-playground">YSF NG-PLAYGROUND</a>
+      </div>
+    </div>
+  </nav>
+  <div class="container content">
+  <h1>Shopping List Check Off</h1>
+
+  <div class="row">
+    <!-- To Buy List -->
+    <div class="col-md-8" ng-controller="ToBuyController as buyController">
+      <form class="form-inline">
+       <div class="form-group">
+         <label for="itemName">Item Name:</label>
+         <input type="text" ng-model="buyController.itemName" class="form-control">
+       </div>
+       <div class="form-group">
+         <label for="quantity">Quantity:</label>
+         <input type="text" class="form-control" ng-model="buyController.itemQuantity">
+       </div>
+       <button type="submit" class="btn btn-default" ng-click="buyController.addNewItem()">Add </button>
+     </form>
+     <h2>To Buy: {{ buyController.items.length}} item(s)</h2>
+     <ul>
+       <li ng-repeat="item in buyController.items">Buy {{item.quantity}} {{item.name}}
+         <button ng-click="buyController.addToBoughtList($index)" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button>
+       </li>
+     </ul>
+     <div ng-if="buyController.items.length === 0" class="emptyMessage">Everything is bought!</div>
+    </div>
+
+    <!-- Already Bought List -->
+    <div class="col-md-4" ng-controller="AlreadyBoughtController as boughtController">
+     <h2>Already Bought: {{ boughtController.items.length}} item(s)</h2>
+     <ul>
+       <li ng-repeat="item in boughtController.items">Bought {{ item.quantity }} {{item.name}}</li>
+     </ul>
+     <div ng-if="boughtController.items.length === 0" class="emptyMessage">Nothing bought yet.</div>
+    </div>
+  </div>
+</div>
+<footer>
+ <nav class="navbar navbar-inverse  navbar-fixed-bottom" role="navigation">
+   <div class="container text-center">
+       <p class="navbar-text col-md-12 col-sm-12 col-xs-12">
+         Checkout my other projects in my <a href="http://github.com/ysfdev">Github</a>
+       </p>
+   </div>
+ </nav>
+</footer>
+  <script src="angular.min.js"></script>
+  <script  src="app.js"></script>
+</body>
+</html>

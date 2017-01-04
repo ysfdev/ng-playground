@@ -18,6 +18,11 @@
         "name": "Lunch Checker",
         "description" : "A simple lunch Checker",
         "link" : "projects/lunch-checker/index.html"
+      },
+      {
+        "name": "ShoppingListCheckOff",
+        "description" : "Shopping list checkoff",
+        "link" : "projects/shopping-list/index.html"
       }
     ];
   }
