@@ -25,3 +25,14 @@ img {
     padding: 1em;
     display: block;
 }
+
+.actions {
+    padding: 1em 0;
+}
+
+.like-btn {
+   font-size: 2em;
+}
+.liked {
+   color: #f44242;
+}
